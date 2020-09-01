@@ -3,25 +3,15 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect,
 } from "react-router-dom";
 import LaunchListContainer from "./components/LaunchList";
 import LaunchProfileContainer from "./components/LaunchProfile";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <Router>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/launches">Launches</Link>
-          </li>
-        </ul>
-      </nav>
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -39,7 +29,7 @@ function App() {
 }
 
 function Home() {
-  return <h1>Home</h1>;
+  return <Layout>Home</Layout>;
 }
 
 export default App;

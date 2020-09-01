@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { useLaunchProfileQuery } from "../../generated/graphql";
 import LaunchProfile from "./LaunchProfile";
+import Layout from "../Layout";
 
 const LaunchProfileContainer = () => {
   const { id } = useParams();
@@ -11,14 +12,26 @@ const LaunchProfileContainer = () => {
   });
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <Layout>
+        <div>Loading...</div>
+      </Layout>
+    );
   }
 
   if (error || !data) {
-    return <div>ERROR</div>;
+    return (
+      <Layout>
+        <div>ERROR</div>
+      </Layout>
+    );
   }
 
-  return <LaunchProfile data={data} />;
+  return (
+    <Layout>
+      <LaunchProfile data={data} />
+    </Layout>
+  );
 };
 
 export default LaunchProfileContainer;
