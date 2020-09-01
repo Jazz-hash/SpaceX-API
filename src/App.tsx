@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
+import LaunchListContainer from "./components/LaunchList";
+import LaunchProfileContainer from "./components/LaunchProfile";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/launches">Launches</Link>
+          </li>
+        </ul>
+      </nav>
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/launches" exact>
+          <LaunchListContainer />
+        </Route>
+        <Route path="/launches/:id" exact>
+          <LaunchProfileContainer />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
+    </Router>
   );
+}
+
+function Home() {
+  return <h1>Home</h1>;
 }
 
 export default App;
