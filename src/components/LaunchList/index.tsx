@@ -2,6 +2,10 @@ import React from "react";
 import { useLaunchListQuery } from "../../generated/graphql";
 import LaunchList from "./LaunchList";
 import Layout from "../Layout";
+import Navigation from "../Header";
+import Footer from "../Footer";
+import Loader from "../Loader";
+import Error from "../Error";
 
 const LaunchListContainer = () => {
   const { data, error, loading } = useLaunchListQuery();
@@ -9,7 +13,7 @@ const LaunchListContainer = () => {
   if (loading) {
     return (
       <Layout>
-        <div>Loading...</div>
+        <Loader />
       </Layout>
     );
   }
@@ -17,15 +21,24 @@ const LaunchListContainer = () => {
   if (error || !data) {
     return (
       <Layout>
-        <div>ERROR</div>
+        <Error />
       </Layout>
     );
   }
 
   return (
-    <Layout>
-      <LaunchList data={data} />
-    </Layout>
+    <div>
+      <header>
+        <Navigation />
+      </header>
+      <br />
+      <br />
+      <section className="mt-5 pt-5" style={{ width: "90%", margin: "auto" }}>
+        <LaunchList data={data} />
+      </section>
+      <br />
+      <Footer />
+    </div>
   );
 };
 

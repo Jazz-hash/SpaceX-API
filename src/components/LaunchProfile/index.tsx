@@ -4,6 +4,10 @@ import { useParams } from "react-router-dom";
 import { useLaunchProfileQuery } from "../../generated/graphql";
 import LaunchProfile from "./LaunchProfile";
 import Layout from "../Layout";
+import Loader from "../Loader";
+import Error from "../Error";
+import Navigation from "../Header";
+import Footer from "../Footer";
 
 const LaunchProfileContainer = () => {
   const { id } = useParams();
@@ -14,7 +18,7 @@ const LaunchProfileContainer = () => {
   if (loading) {
     return (
       <Layout>
-        <div>Loading...</div>
+        <Loader />
       </Layout>
     );
   }
@@ -22,15 +26,24 @@ const LaunchProfileContainer = () => {
   if (error || !data) {
     return (
       <Layout>
-        <div>ERROR</div>
+        <Error />
       </Layout>
     );
   }
 
   return (
-    <Layout>
-      <LaunchProfile data={data} />
-    </Layout>
+    <div>
+      <header>
+        <Navigation />
+      </header>
+      <br />
+      <br />
+      <section className="mt-5 pt-5" style={{ width: "90%", margin: "auto" }}>
+        <LaunchProfile data={data} />
+      </section>
+      <br />
+      <Footer />
+    </div>
   );
 };
 

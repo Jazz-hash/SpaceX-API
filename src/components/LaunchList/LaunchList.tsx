@@ -7,10 +7,11 @@ interface Props {
 }
 
 const LaunchList: React.FC<Props> = ({ data }) => {
+  console.log(data.launches);
   return (
     <>
       <div className="row">
-        <div className="col-md-12 col-xs-12 col-sm-12 col-lg-4 text-white">
+        <div className="col-md-12 col-xs-12 col-sm-12 col-lg-4 text-white ">
           <div className="container">
             <h6>05/01/20</h6>{" "}
             <h2 style={{ fontWeight: "bolder" }}>

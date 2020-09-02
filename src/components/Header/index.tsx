@@ -1,11 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import image from "./../logo.jpg";
 
 const Navigation = () => {
   return (
-    <nav className="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <nav
+      style={{ height: "55px", backgroundColor: "black" }}
+      className="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"
+    >
       <NavLink className="navbar-brand" activeClassName="active" to="/">
-        <strong>SpaceX</strong>
+        <img src={image} height="35px" alt="logo" />
       </NavLink>
       <button
         className="navbar-toggler"
@@ -19,10 +23,10 @@ const Navigation = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
+        <ul className="navbar-nav mr-auto" style={{ height: "55px" }}>
+          <li className="nav-item">
             <NavLink activeClassName="active" className="nav-link" to="/">
-              Home <span className="sr-only">(current)</span>
+              Home
             </NavLink>
           </li>
           <li className="nav-item">
@@ -35,11 +39,7 @@ const Navigation = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink
-              activeClassName="active"
-              className="nav-link"
-              to="/launches"
-            >
+            <NavLink activeClassName="active" className="nav-link" to="/about">
               About
             </NavLink>
           </li>

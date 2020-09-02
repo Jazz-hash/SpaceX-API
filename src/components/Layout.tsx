@@ -12,10 +12,14 @@ const Layout: React.FC<Props> = ({ children }) => {
       <header>
         <Navigation />
       </header>
+      <br />
+      <br />
       <section className="mt-5 pt-5" style={{ width: "90%", margin: "auto" }}>
         {children}
       </section>
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

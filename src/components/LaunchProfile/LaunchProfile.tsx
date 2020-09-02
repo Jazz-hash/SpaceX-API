@@ -32,7 +32,13 @@ const LaunchProfile: React.FC<Props> = ({ data }) => {
               image ? (
                 <div className="card">
                   <div className="card-body">
-                    <img src={image} key={image} alt="launch" />
+                    <img
+                      src={image}
+                      width="100%"
+                      height="300px"
+                      key={image}
+                      alt="launch"
+                    />
                   </div>
                 </div>
               ) : null
@@ -40,6 +46,7 @@ const LaunchProfile: React.FC<Props> = ({ data }) => {
           </div>
         )}
       </div>
+      <br />
     </div>
   );
 };
