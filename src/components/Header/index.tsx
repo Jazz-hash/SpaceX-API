@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import image from "./../logo.jpg";
+import image from "./../../images/logo.jpg";
 
 const Navigation = () => {
   return (
@@ -11,17 +11,7 @@ const Navigation = () => {
       <NavLink className="navbar-brand" activeClassName="active" to="/">
         <img src={image} height="35px" alt="logo" />
       </NavLink>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
+
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
@@ -45,6 +35,24 @@ const Navigation = () => {
           </li>
         </ul>
       </div>
+      <ul className="d-sm-block d-md-block d-lg-none mr-auto w-50 navbar-nav">
+        <li className="row">
+          <div className="col-6 col-sm-3">
+            <NavLink
+              activeClassName="active"
+              className="nav-link"
+              to="/launches"
+            >
+              Launches
+            </NavLink>
+          </div>
+          <div className="col-6 col-sm-6">
+            <NavLink activeClassName="active" className="nav-link" to="/about">
+              About
+            </NavLink>
+          </div>
+        </li>
+      </ul>
     </nav>
   );
 };

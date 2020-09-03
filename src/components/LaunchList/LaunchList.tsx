@@ -7,7 +7,6 @@ interface Props {
 }
 
 const LaunchList: React.FC<Props> = ({ data }) => {
-  console.log(data.launches);
   return (
     <>
       <div className="row">

@@ -51,6 +51,13 @@
     "@graphql-codegen/cli": "1.17.8",
     "@graphql-codegen/typescript": "1.17.8",
     "@graphql-codegen/typescript-operations": "1.17.8",
-    "@graphql-codegen/typescript-react-apollo": "1.17.8"
+    "@graphql-codegen/typescript-react-apollo": "1.17.8",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
+    "enzyme-to-json": "^3.5.0",
+    "jest-fetch-mock": "^3.0.3",
+    "ts-jest": "^26.3.0"
   }
 }

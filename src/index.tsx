@@ -6,7 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import { ApolloProvider, InMemoryCache, ApolloClient } from "@apollo/client";
 import "mdbootstrap/css/bootstrap.css";
 
-const client = new ApolloClient({
+export const client = new ApolloClient({
   uri: "https://spacexdata.herokuapp.com/graphql",
   cache: new InMemoryCache(),
 });

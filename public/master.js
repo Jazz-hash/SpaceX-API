@@ -20,10 +20,10 @@ var persons = [],
 var colors = [];
 colors[2] = [];
 colors[2]["background"] = "#2F294F";
-colors[2][1] = "rgba(74,49,89,";
+colors[2][1] = "rgba(36, 237, 224,";
 colors[2][2] = "rgba(130,91,109,";
-colors[2][3] = "rgba(185,136,131,";
-colors[2][4] = "rgba(249,241,204,";
+colors[2][3] = "rgba(130,91,109,";
+colors[2][4] = "rgba(0, 68, 255,";
 
 var colorTheme = 2,
   mainSpeed = 1;

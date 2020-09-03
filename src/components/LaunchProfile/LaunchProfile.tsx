@@ -30,7 +30,7 @@ const LaunchProfile: React.FC<Props> = ({ data }) => {
           <div className="card-columns">
             {data.launch.links.flickr_images.map((image) =>
               image ? (
-                <div className="card">
+                <div className="card" key={image}>
                   <div className="card-body">
                     <img
                       src={image}
