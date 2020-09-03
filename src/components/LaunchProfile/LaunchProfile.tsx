@@ -10,7 +10,7 @@ const LaunchProfile: React.FC<Props> = ({ data }) => {
     return <div>No launch available</div>;
   }
   return (
-    <div className="card">
+    <div className="card text-dark">
       <div className="card-body">
         <div style={{ fontWeight: "bolder" }}>
           <span>Flight {data.launch.flight_number}: </span>
