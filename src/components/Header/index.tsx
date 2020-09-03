@@ -23,7 +23,7 @@ const Navigation = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto" style={{ height: "55px" }}>
+        <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <NavLink activeClassName="active" className="nav-link" to="/">
               Home
